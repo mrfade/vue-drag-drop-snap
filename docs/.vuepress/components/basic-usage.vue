@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VueDragDropSnap from '../../../dist/vue-drag-drop-snap.esm.js'
+import VueDragDropSnap from '../../../src/DragDropSnap.vue'
 
 export default {
   name: 'App',
