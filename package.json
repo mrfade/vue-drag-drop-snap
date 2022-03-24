@@ -42,7 +42,7 @@
     "vue-template-compiler": "^2.5.16",
     "vuepress": "^1.9.7",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.11"
   },
   "bugs": {
     "url": "https://github.com/mrfade/vue-drag-drop-snap/issues"
