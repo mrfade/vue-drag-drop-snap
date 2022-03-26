@@ -1,75 +1,8 @@
-# Usage
-
-## Registering the component
-
-You can register the component in your application by adding the following code to the `main.js` file:
-
-```js
-import VueDragDropSnap from 'vue-drag-drop-snap'
-
-Vue.component('vue-drag-drop-snap', VueDragDropSnap)
-```
-
-or you can use the component directly in your template:
-
-```js
-import VueDragDropSnap from 'vue-drag-drop-snap'
-
-export default {
-  name: 'App',
-  components: {
-    VueDragDropSnap
-  }
-}
-```
-
-## Basic usage
-
-<basic-usage />
-
-```html
 <template>
-  <div class="wrapper">
-    <vue-drag-drop-snap>
-      TEST
-    </vue-drag-drop-snap>
-  </div>
-</template>
-
-<script>
-import VueDragDropSnap from 'vue-drag-drop-snap'
-
-export default {
-  name: 'App',
-  components: {
-    VueDragDropSnap
-  }
-};
-</script>
-
-<style>
-.wrapper {
-  width: 800px;
-  height: 450px;
-  position: relative;
-}
-</style>
-```
-
-::: warning Note
-  Don't forget to add `position: relative;` to the parent element.
-:::
-
-## Advanced usage
-
-<advanced-usage />
-
-```html
-<template>
-  <div class="wrapper">
+  <div class="wrapper2">
     <vue-drag-drop-snap
       class="dds"
-      parent-selector=".wrapper"
+      parent-selector=".wrapper2"
       starting-position="BL"
       :snap-options="{
         'top-left': false,
@@ -89,13 +22,13 @@ export default {
       @dragging="onDragging"
       @dropped="onDropped"
     >
-      TEST
+      <img src="https://picsum.photos/300/200">
     </vue-drag-drop-snap>
   </div>
 </template>
 
 <script>
-import VueDragDropSnap from 'vue-drag-drop-snap'
+import VueDragDropSnap from '../../../src/DragDropSnap.vue'
 
 export default {
   name: 'App',
@@ -117,7 +50,7 @@ export default {
 </script>
 
 <style>
-.wrapper {
+.wrapper2 {
   width: 100%;
   height: 500px;
   position: relative;
@@ -148,8 +81,3 @@ img {
   border-radius: 10px;
 }
 </style>
-```
-
-::: tip Tip
-  You can apply your own transition to `.dropped` class.
-:::
