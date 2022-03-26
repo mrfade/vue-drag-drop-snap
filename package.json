@@ -47,12 +47,15 @@
   "bugs": {
     "url": "https://github.com/mrfade/vue-drag-drop-snap/issues"
   },
-  "homepage": "https://github.com/mrfade/vue-drag-drop-snap#readme",
+  "homepage": "https://mrfade.github.io/vue-drag-drop-snap",
   "directories": {
     "doc": "docs"
   },
   "keywords": [
     "vue-drag-drop",
-    "drag-drop-snap"
+    "drag-drop-snap",
+    "drag and drop",
+    "drag drop",
+    "dnd"
   ]
 }
