@@ -87,6 +87,7 @@ export default {
       width: 0,
       height: 0
     },
+    parentElem: null,
     isDragging: false,
     onLeft: false,
     onTop: false,
@@ -126,6 +127,8 @@ export default {
   mounted () {
     this.isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
     this.elem = this.$el
+
+    this.parentElem = (this.parentSelector && document.body.querySelector(this.parentSelector)) || this.elem.parentNode
 
     this.calculateArea()
 
@@ -194,13 +197,13 @@ export default {
 
       if (e.pageX) {
         if (this.isIos) {
-          this.elem.addEventListener('touchmove', this.elementMove)
+          this.parentElem.addEventListener('touchmove', this.elementMove)
         } else {
-          this.elem.addEventListener('mousemove', this.elementMove)
-          this.elem.addEventListener('mouseleave', this.drop)
+          this.parentElem.addEventListener('mousemove', this.elementMove)
+          this.parentElem.addEventListener('mouseleave', this.drop)
         }
       } else {
-        this.elem.addEventListener('touchmove', this.elementMove)
+        this.parentElem.addEventListener('touchmove', this.elementMove)
       }
     },
 
@@ -209,10 +212,10 @@ export default {
 
       this.isDragging = false
       document.body.style.overflow = null
-      this.elem.removeEventListener('mousemove', this.elementMove, false)
-      this.elem.removeEventListener('touchmove', this.elementMove, false)
-      this.elem.onmouseup = null
-      this.elem.ontouchend = null
+      this.parentElem.removeEventListener('mousemove', this.elementMove, false)
+      this.parentElem.removeEventListener('touchmove', this.elementMove, false)
+      this.parentElem.onmouseup = null
+      this.parentElem.ontouchend = null
 
       if (this.autoSnap) {
         this.calculateArea()
