@@ -1,5 +1,8 @@
 name: pages build and deploy
-on: [push]
+on:
+  push:
+    paths:
+      - 'docs/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
