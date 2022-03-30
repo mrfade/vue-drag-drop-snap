@@ -27,7 +27,7 @@ export default {
 
 <basic-usage />
 
-```html
+```vue
 <template>
   <div class="wrapper">
     <vue-drag-drop-snap>
@@ -64,7 +64,7 @@ export default {
 
 <advanced-usage />
 
-```html
+```vue
 <template>
   <div class="wrapper">
     <vue-drag-drop-snap
@@ -89,7 +89,7 @@ export default {
       @dragging="onDragging"
       @dropped="onDropped"
     >
-      TEST
+      <img src="https://picsum.photos/300/200">
     </vue-drag-drop-snap>
   </div>
 </template>
